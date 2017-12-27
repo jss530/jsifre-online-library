@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  resources :users
+  #resources :users, only: [:new, :create, :show]
 
   root to: 'welcome#home'
 
