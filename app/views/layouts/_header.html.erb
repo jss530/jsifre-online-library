@@ -1,0 +1,16 @@
+<nav class="">
+        <br>
+        <% if user_signed_in? %>
+           <h3><strong><%= "Signed in as #{current_user.email}" %></strong></h3>
+           <br>
+           <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+             <% if current_user.current_books %>
+              <li><%= link_to "My Books", book_path(current_user.current_books.id) %></li>
+              <% end %>
+        <% else %>
+           <%= link_to "Log into your account", new_user_session_path %><br>
+           <%= link_to "Become a member", new_user_registration_path %><br>
+        <% end %>
+        <br>
+        <%= link_to "Home", root_path %><br>
+</nav>
