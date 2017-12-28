@@ -1,0 +1,7 @@
+<h1>You have entered the library!</h1>
+
+<h2>Browse by genre:</h2>
+
+    <% @genres.each do |genre| %>
+        <p><%= link_to genre.name, genre_path(genre.id) %></p>
+    <% end %>

@@ -4,3 +4,7 @@
   and borrow e-books from other users. Every user starts with 1 credit to rent a book of their
   choosing. Most books are only 1 credit to rent, unless otherwise specified. Once you borrow
   a book, keep it for up to one month. Once you return it, you'll be able to rent another!</p>
+  
+<% if user_signed_in? %>
+<%= link_to 'Enter the library', genres_path %>
+<% end %>
