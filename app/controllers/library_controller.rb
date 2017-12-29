@@ -1,7 +1,4 @@
 class LibraryController < ApplicationController
-    
-    def show
-    
-    end
-
+  def user_id:integer
+  end
 end
