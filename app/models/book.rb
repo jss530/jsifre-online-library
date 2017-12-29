@@ -14,4 +14,9 @@ class Book < ApplicationRecord
       return false
     end
   end
+  
+  def borrow
+     self.inventory = self.inventory - 1
+     self.save
+  end
 end

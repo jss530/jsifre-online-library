@@ -8,8 +8,7 @@ class BooksController < ApplicationController
     def borrow
      @book = Book.find(params[:id]) 
      @book.user_id = current_user.id
-     @book.inventory - 1
-     @book.save
+     @book.borrow
      
      redirect_to library_path
     end
