@@ -10,8 +10,8 @@ Genre.create([{ name: 'Fiction' }, { name: 'Romance' }, { name: 'Sci-fi' }, { na
 
 Comment.create(body: 'I loved this.', book_id: 1)
 
-Book.create(title: "Mr. Penumbra's 24-Hour Bookstore", author: "Robin Sloan", year: 2013, description: "It's exactly what it sounds like &mdash; an establishment you have to enter and will never want to leave", availability: true, user_id: 1, genre_id: 1)
+Book.create(title: "Mr. Penumbra's 24-Hour Bookstore", author: "Robin Sloan", year: 2013, description: "It's exactly what it sounds like! An establishment you have to enter and will never want to leave.", availability: true, user_id: 1, genre_id: 1)
 
-Book.create(title: "Wake Up Sir", author: "Jonathan Ames", year: 2004, description: "By the creator of Bored to Death and The Extra Man", availability: true, user_id: 2, genre_id: 1)
+Book.create(title: "Wake Up Sir", author: "Jonathan Ames", year: 2004, description: "By the creator of Bored to Death and The Extra Man", availability: true, user_id: 1, genre_id: 1)
 
 User.create(email: 'jackie@me.com', password: '12345678', credits: 5)

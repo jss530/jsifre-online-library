@@ -1,0 +1,14 @@
+<h2> <%= @book.title %></h2>
+<h3>Author: <%= @book.author %></h3>
+<h4>Year: <%= @book.year %></h4>
+<p>Description: <%= @book.description %></p>
+
+<p><strong>Availability:</strong></p>
+   <% if @book.availability %>
+       <p>This book is available.</p>
+       <p><strong>Cost: <%=@book.cost%> credit</strong></p>
+       <p><%= button_to 'Borrow this book', borrow_path %></p>
+   <% else %>
+       <p>Sorry, this book is rented.</p>
+   <% end %>
+
