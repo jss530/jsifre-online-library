@@ -7,4 +7,11 @@ class Book < ApplicationRecord
   validates :title, presence: true
   validates :author, presence: true
   
+  def available?
+    if self.inventory != 0
+      return true
+    else
+      return false
+    end
+  end
 end

@@ -4,7 +4,7 @@
 <p><strong>Description:</strong> <%= @book.description %></p>
 
 <p><strong>Availability:</strong></p>
-   <% if @book.availability %>
+   <% if @book.available? %>
        <p>This book is available.</p>
        <p><strong>Cost: <%=@book.cost%> credit</strong></p>
        <p><%= button_to 'Borrow this book', borrow_path %></p>
