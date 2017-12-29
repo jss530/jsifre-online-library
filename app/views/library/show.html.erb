@@ -1,0 +1,13 @@
+<h1><%= current_user.email%>'s Library</h1>
+
+<h3>Books I've Rented</h3>
+    <ol>
+        <% @rented_books.each do |book| %>
+            <li><%=book.name%> by <%=book.title%></li>
+        <%end%>
+    </ol>
+
+<h3>Books I Own </h3>
+
+
+<h3>Overdue Books</h3>

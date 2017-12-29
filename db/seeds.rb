@@ -15,3 +15,8 @@ Book.create(title: "Mr. Penumbra's 24-Hour Bookstore", author: "Robin Sloan", ye
 Book.create(title: "Wake Up Sir", author: "Jonathan Ames", year: 2004, description: "By the creator of Bored to Death and The Extra Man", inventory: 1, user_id: 1, genre_id: 1)
 
 User.create(email: 'jackie@me.com', password: '12345678', credits: 5)
+
+User.create(email: 'david@me.com', password: '12345678', credits: 1)
+
+Library.create(user_id: 1)
+Library.create(user_id: 2)

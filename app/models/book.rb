@@ -1,6 +1,7 @@
 class Book < ApplicationRecord
   belongs_to :user
   belongs_to :genre
+  belongs_to :library
   has_many :comments
 
 
@@ -17,6 +18,7 @@ class Book < ApplicationRecord
   
   def borrow
      self.inventory = self.inventory - 1
+     self.rented = true
      self.save
   end
 end

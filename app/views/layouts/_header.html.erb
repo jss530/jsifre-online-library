@@ -3,6 +3,7 @@
         <% if user_signed_in? %>
            <h3><strong><%= "Signed in as #{current_user.email}" %></strong></h3>
            <br>
+           <%= link_to "My library", library_path(current_user.id) %><br>
            <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
         <% else %>
            <%= link_to "Log into your account", new_user_session_path %><br>

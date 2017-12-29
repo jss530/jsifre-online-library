@@ -10,7 +10,7 @@ class BooksController < ApplicationController
      @book.user_id = current_user.id
      @book.borrow
      
-     redirect_to library_path
+     redirect_to library_path(current_user.id)
     end
   
 end
