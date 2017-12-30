@@ -8,13 +8,13 @@ Rails.application.routes.draw do
   
   resources :genres 
   
-  resources :books, only: [:new, :create, :edit, :update, :destroy]
+  resources :books
 
-  resources :books, only: [:show] do
-    resources :comments
-  end
+  # resources :books, only: [:show] do
+  #   resources :comments
+  # end
 
-  resources :library
+  resources :library, only: [:show]
 
   root to: 'welcome#home'
   

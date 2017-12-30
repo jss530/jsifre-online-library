@@ -1,12 +1,16 @@
 class BooksController < ApplicationController
     before_action :authenticate_user!
     
+    def index
+    end
+    
     def show
      @book = Book.find(params[:id]) 
     end
     
     def new
      @book = Book.new
+     @genre = @book.genre {|genre| book.genre.build}
     end
     
     def edit 

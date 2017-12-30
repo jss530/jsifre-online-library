@@ -16,14 +16,15 @@
       <%= f.text_area :description%><br>
       <br>
       
-      <h3> Choose a genre from the existing list, or add a new one below: </h3>
+      <h3> Choose a genre: </h3>
        <%= f.collection_check_boxes :genre_id, Genre.all, :id, :name %>
        <br>
       <h4> Other genre: </h4>
-        <%= f.fields_for :genres, @book.genres.build do |fields| %>
-        <%= fields.text_field :name %>
-      <br>
+      <%= f.fields_for(:genre) do |form| %>
+        <%= form.label :name %>
+        <%= form.text_field :name %>
       <% end %>
+      <br>
       <br>
       <%= f.submit %>
     <% end %>
