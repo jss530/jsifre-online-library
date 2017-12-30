@@ -1,3 +1,5 @@
+require 'pry'
+
 class BooksController < ApplicationController
     before_action :authenticate_user!
     
@@ -10,7 +12,6 @@ class BooksController < ApplicationController
     
     def new
      @book = Book.new
-     @genre = @book.genre {|genre| book.genre.build}
     end
     
     def edit 
@@ -39,7 +40,7 @@ class BooksController < ApplicationController
     private
     
     def book_params
-      params.require(:book).permit(:title, :author, :year, :description, :genre_id)
+      params.require(:book).permit(:title, :author, :year, :description)
     end
   
 end

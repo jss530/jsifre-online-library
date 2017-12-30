@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171230180459) do
+ActiveRecord::Schema.define(version: 20171230201613) do
 
   create_table "books", force: :cascade do |t|
     t.string "title"
@@ -24,6 +24,11 @@ ActiveRecord::Schema.define(version: 20171230180459) do
     t.integer "genre_id"
     t.integer "inventory"
     t.boolean "rented", default: false
+  end
+
+  create_table "books_genres", id: false, force: :cascade do |t|
+    t.integer "book_id"
+    t.integer "genre_id"
   end
 
   create_table "comments", force: :cascade do |t|

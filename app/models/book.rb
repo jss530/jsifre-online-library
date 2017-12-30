@@ -1,9 +1,8 @@
 class Book < ApplicationRecord
   belongs_to :user
-  belongs_to :genre
+  has_and_belongs_to_many :genres
   has_many :comments
-
-
+ 
   validates :title, presence: true
   validates :author, presence: true
   

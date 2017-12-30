@@ -1,0 +1,21 @@
+    <%= form_for(@book) do |f| %>
+      <%= f.label :title, "Title:"%><br>
+      <%= f.text_field :title, {id: "title"} %><br>
+      <br>
+      <%= f.label :author, "Author:"%><br>
+      <%= f.text_field :author%><br>
+      <br>
+      <%= f.label :year, "Year of publication:"%><br>
+      <%= f.text_field :year%><br>
+      <br>
+      <%= f.label :description, "Write a short book summary:"%><br>
+      <%= f.text_area :description%><br>
+      <br>
+      
+      <h3> Choose a genre: </h3>
+       <%= f.collection_check_boxes :genre_ids, Genre.all, :id %>
+      <br>
+      <br>
+      <%= f.submit %>
+    <% end %>
+    
