@@ -20,4 +20,5 @@ class Book < ApplicationRecord
      self.rented = true
      self.save
   end
+  
 end

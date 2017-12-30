@@ -6,8 +6,7 @@ class LibraryController < ApplicationController
   
   def show
     @my_library = Library.find(params[:id])
-    #binding.pry
-    @rented_books = @library.user.books.find_by rented:true
-    @owned_books = @library.user.books.find_by rented:false
+    @rented_books = @my_library.user.books.find_all {|book| book.rented == true}
+    @owned_books = @my_library.user.books.find_all {|book| book.rented == false}
   end
 end

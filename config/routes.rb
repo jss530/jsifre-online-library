@@ -6,9 +6,9 @@ Rails.application.routes.draw do
     delete 'sign_out', :to => 'devise/sessions#destroy'
   end
   
-  resources :genres do
-    resources :books, only: [:index, :new, :create, :edit, :update, :destroy]
-  end
+  resources :genres 
+  
+  resources :books, only: [:new, :create, :edit, :update, :destroy]
 
   resources :books, only: [:show] do
     resources :comments

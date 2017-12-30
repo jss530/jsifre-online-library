@@ -8,6 +8,9 @@
     </ol>
 
 <h3>Books I Own </h3>
-
-
-<h3>Overdue Books</h3>
+    <ol>
+        <% @owned_books.each do |book| %>
+            <li><%=book.title%> by <%=book.author%></li>
+        <%end%>
+    </ol>
+    <p><%= button_to 'Add a book', new_book_path %></p>
