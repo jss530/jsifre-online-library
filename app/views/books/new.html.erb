@@ -2,29 +2,4 @@
 
 <h3>To add a book that you own, please fill out the form below. Title & author are mandatory.</h3>
     
-    <%= form_for(@book) do |f| %>
-      <%= f.label :title, "Title:"%><br>
-      <%= f.text_field :title, {id: "title"} %><br>
-      <br>
-      <%= f.label :author, "Author:"%><br>
-      <%= f.text_field :author%><br>
-      <br>
-      <%= f.label :year, "Year of publication:"%><br>
-      <%= f.text_field :year%><br>
-      <br>
-      <%= f.label :description, "Write a short book summary:"%><br>
-      <%= f.text_area :description%><br>
-      <br>
-      
-      <h3> Choose a genre: </h3>
-       <%= f.collection_check_boxes :genre_id, Genre.all, :id, :name %>
-       <br>
-      <h4> Other genre: </h4>
-      <%= f.fields_for(:genre) do |form| %>
-        <%= form.label :name %>
-        <%= form.text_field :name %>
-      <% end %>
-      <br>
-      <br>
-      <%= f.submit %>
-    <% end %>
+<%= render 'form' %>
