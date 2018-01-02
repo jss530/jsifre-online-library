@@ -21,8 +21,10 @@ class BooksController < ApplicationController
     def create 
      @book = Book.new(book_params)
      if @book.save
+      @book.update(user_id: current_user.id)
+      current_user.owned_books << @book
       flash[:success] = "Your book has been added!"
-      redirect_to library_path
+      redirect_to library_path(current_user.id)
      else
       flash[:try_again] = "Something went wrong - please try again."
       render action: 'new'
@@ -40,7 +42,7 @@ class BooksController < ApplicationController
     private
     
     def book_params
-      params.require(:book).permit(:title, :author, :year, :description)
+      params.require(:book).permit(:title, :author, :year, :description, :genre_id)
     end
   
 end

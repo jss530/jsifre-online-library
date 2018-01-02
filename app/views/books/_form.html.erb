@@ -1,6 +1,6 @@
     <%= form_for(@book) do |f| %>
       <%= f.label :title, "Title:"%><br>
-      <%= f.text_field :title, {id: "title"} %><br>
+      <%= f.text_field :title %><br>
       <br>
       <%= f.label :author, "Author:"%><br>
       <%= f.text_field :author%><br>
@@ -13,7 +13,7 @@
       <br>
       
       <h3> Choose a genre: </h3>
-       <%= f.collection_check_boxes :genre_ids, Genre.all, :id %>
+       <%= f.collection_check_boxes :genre_id, Genre.all, :id, :name %>
       <br>
       <br>
       <%= f.submit %>

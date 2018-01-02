@@ -16,6 +16,14 @@ class User < ApplicationRecord
     user.password = Devise.friendly_token[0,20]
     end
    end
+   
+   def owned_books
+     @owned_books = self.books.find_all {|book| book.rented == false}
+   end
+   
+   def rented_books
+    @rented_books = self.books.find_all {|book| book.rented == true}
+   end
   
 #   def my_library=(library)
 #     self.my_library_id = library.id if library
