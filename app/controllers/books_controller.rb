@@ -33,6 +33,14 @@ class BooksController < ApplicationController
     end
     
     def update
+     @book = Book.find(params[:id])
+
+     if @book.update(book_params)
+       redirect_to library_path(current_user.id)
+     else
+       flash[:try_again] = "Something went wrong - please try again."
+       render action: 'edit'
+     end
     end
     
     def destroy
