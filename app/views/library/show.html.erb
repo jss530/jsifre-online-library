@@ -4,7 +4,8 @@
     <% if @rented_books != nil %>
         <ol>
         <% @rented_books.each do |book| %>
-            <li><%=book.title%> by <%=book.author%></li>
+            <li><%=book.title%> by <%=book.author%></li><br>
+            <%= link_to 'Delete book', book_path(book), method: :delete %> <%= link_to 'Edit book', edit_book_path(book) %>
         <%end%>
         </ol>
     <% else %>
@@ -17,6 +18,7 @@
         <ol>
         <% @owned_books.each do |book| %>
             <li><%=book.title%> by <%=book.author%></li>
+            <%= link_to 'Delete book', book_path(book), method: :delete %> <%= link_to 'Edit book', edit_book_path(book) %>
         <%end%>
         </ol>
     <% else %>

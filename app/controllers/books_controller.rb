@@ -20,15 +20,27 @@ class BooksController < ApplicationController
     
     def create 
      @book = Book.new(book_params)
+     
      if @book.save
-      @book.update(user_id: current_user.id)
-      current_user.owned_books << @book
-      flash[:success] = "Your book has been added!"
-      redirect_to library_path(current_user.id)
+       @book.update(user_id: current_user.id)
+       current_user.owned_books << @book
+       flash[:success] = "Your book has been added!"
+       redirect_to library_path(current_user.id)
      else
-      flash[:try_again] = "Something went wrong - please try again."
-      render action: 'new'
+       flash[:try_again] = "Something went wrong - please try again."
+       render action: 'new'
      end
+    end
+    
+    def update
+    end
+    
+    def destroy
+     @book = Book.find(params[:id])
+     @book.destroy
+
+     flash[:success] = "#{@book.title} has been deleted."
+     redirect_to library_path(current_user.id)
     end
     
     def borrow
