@@ -7,7 +7,11 @@
    <% if @book.available? %>
        <p>This book is available.</p>
        <p><strong>Cost: <%=@book.cost%> credit</strong></p>
-       <p><%= button_to 'Borrow this book', borrow_path %></p>
+          <% if @book.user.credits >= @book.cost %>
+          <p><%= button_to 'Borrow this book', borrow_path %></p>
+          <% else %>
+             <p><strong>Sorry, you don't have enough credits to rent this book. Return a book to get more credits!</strong></p>
+          <% end %>
    <% else %>
        <p>Sorry, this book is rented.</p>
    <% end %>

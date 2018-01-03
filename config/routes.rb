@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   root to: 'welcome#home'
   
   post 'books/:id/borrow', to: 'books#borrow', as: 'borrow'
+  post 'books/:id/return', to: 'books#return_book', as: 'return'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -59,6 +59,14 @@ class BooksController < ApplicationController
      redirect_to library_path(current_user.id)
     end
     
+    def return_book
+     @book = Book.find(params[:id]) 
+     @book.user_id = nil
+     @book.return_book
+     flash[:success] = "Book has been returned!"
+     redirect_to library_path(current_user.id)
+    end
+    
     private
     
     def book_params
