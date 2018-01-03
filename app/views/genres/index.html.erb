@@ -5,3 +5,6 @@
     <% @genres.each do |genre| %>
         <p><%= link_to genre.name, genre_path(genre.id) %></p>
     <% end %>
+    
+<h2>Most popular books</h2>
+<p>Most popular books are decided and ranked based on number of comments received.</p>

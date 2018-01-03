@@ -26,3 +26,13 @@
     <% end %>
     <br>
     <p><%=link_to 'Click here to add a book to your Books I Own list', new_book_path%></p>
+    
+<h3>My Comments </h3>
+    <ol>
+    <% @my_library.user.comments.each do |comment| %>
+        <li><%=link_to comment.book.title, book_path(comment.book.id)%></li>
+        <strong><p><%=comment.commenter%></p></strong>
+        <p><%=comment.body%></p>
+        <br>
+    <% end %>
+    </ol>
