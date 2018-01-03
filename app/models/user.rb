@@ -24,15 +24,5 @@ class User < ApplicationRecord
    def rented_books
     @rented_books = self.books.find_all {|book| book.rented == true}
    end
-  
-#   def my_library=(library)
-#     self.my_library_id = library.id if library
-#     @my_library = library
-#     self.save
-#   end
-
-#   def my_library
-#     @my_library = Library.find_by(id: self.my_library_id)
-#   end
 
 end

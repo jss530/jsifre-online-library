@@ -10,9 +10,9 @@ Rails.application.routes.draw do
   
   resources :books
 
-  # resources :books, only: [:show] do
-  #   resources :comments
-  # end
+  resources :books, only: [:show] do
+    resources :comments
+  end
 
   resources :library, only: [:show]
 

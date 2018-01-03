@@ -12,3 +12,34 @@
        <p>Sorry, this book is rented.</p>
    <% end %>
 
+<h2>Comments</h2>
+   <% if @book.comments != [] %>
+      <ol>
+      <% @book.comments.each do |comment| %>
+          <li><strong>Comment by <%=comment.commenter%></strong></li><br>
+          <%= comment.body %>
+          <%= link_to 'Delete Comment', book_comment_path(@book, comment), method: :delete %><br>
+          <br>
+          <% end %>
+      </ol>
+   <% else %>
+      <p>There are no comments yet. Add yours below!</p>
+   <% end %>
+      
+      
+<h2>Add a comment:</h2>
+<%= form_for([@book, @book.comments.build]) do |f| %>
+  <p>
+    <%= f.label :commenter, "Choose the name you want displayed:" %><br />
+    <%= f.text_field :commenter %>
+  </p>
+
+  <p>
+    <%= f.label :body, "Your comment:" %><br />
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
