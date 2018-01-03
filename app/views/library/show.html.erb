@@ -7,7 +7,7 @@
         <ol>
         <% @rented_books.each do |book| %>
             <li><%=book.title%> by <%=book.author%></li><br>
-            <%= link_to 'Return book', return_path(book.id), :controller => 'books'%>
+            <%= link_to 'Return book', return_path(book.id)%>
             <br>
             <br>
         <%end%>
