@@ -30,4 +30,8 @@ class Book < ApplicationRecord
      self.user.save
   end
   
+  def self.newest_books
+    order('created_at desc').limit(5)
+  end
+  
 end

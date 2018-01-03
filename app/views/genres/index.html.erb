@@ -6,5 +6,12 @@
         <p><%= link_to genre.name, genre_path(genre.id) %></p>
     <% end %>
     
-<h2>Most popular books</h2>
-<p>Most popular books are decided and ranked based on number of comments received.</p>
+<h2>New to the library</h2>
+<p>These books are brand spankin' new!</p>
+    <ol>
+    <% Book.newest_books.each do |book| %>
+        <li><%=link_to book.title, book_path(book.id)%> by <%=book.author%></li> 
+    <% end %>
+    </ol>
+    
+
