@@ -1,0 +1,14 @@
+<%= form_for([book, book.comments.build]) do |f| %>
+  <p>
+    <%= f.label :commenter, "Choose the name you want displayed:" %><br />
+    <%= f.text_field :commenter %>
+  </p>
+
+  <p>
+    <%= f.label :body, "Your comment:" %><br />
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
