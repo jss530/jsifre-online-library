@@ -2,6 +2,7 @@ class Book < ApplicationRecord
   belongs_to :user, optional: true
   belongs_to :genre, optional: true
   has_many :comments
+  accepts_nested_attributes_for :genre
  
   validates :title, presence: true
   validates :author, presence: true
@@ -32,6 +33,15 @@ class Book < ApplicationRecord
   
   def self.newest_books
     order('created_at desc').limit(5)
+  end
+  
+  def genres_attributes=(genres_attributes)
+    genres_attributes.values.each do |genre_attributes|
+      unless genre_attributes[:name].blank?
+      genre = Genre.find_or_create_by(genre_attributes)
+      self.genre_id = genre.id
+      end
+    end
   end
   
 end

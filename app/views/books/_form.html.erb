@@ -12,10 +12,17 @@
       <%= f.text_area :description%><br>
       <br>
       
-      <h3> Choose a genre: </h3>
+      <h3> Choose a genre, or add a new genre below: </h3>
        <%= f.collection_check_boxes :genre_id, Genre.all, :id, :name %>
       <br>
       <br>
-      <%= f.submit %>
+      <%= f.fields_for :genre, Genre.new do |g_form| %>
+        <%= g_form.label :name, "New Genre Name" %>
+        <%= g_form.text_field :name %>
+        
+      <% end %>
+      <br>
+      <br>
+      <%= f.submit "Add book" %>
     <% end %>
     
