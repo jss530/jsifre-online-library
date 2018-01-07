@@ -11,9 +11,6 @@ class CommentsController < ApplicationController
       @comment = @book.comments.new
     end
     
-    def edit
-    end
-    
     def create
      @book = Book.find(params[:book_id])
      @comment = @book.comments.new(comment_params)
@@ -28,8 +25,6 @@ class CommentsController < ApplicationController
      end
     end
     
-    def update
-    end
     
     def destroy
       @book = Book.find(params[:book_id])

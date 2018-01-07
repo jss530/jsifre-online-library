@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :books
 
   resources :books, only: [:show] do
-    resources :comments
+    resources :comments, only: [:show, :new, :create, :destroy]
   end
 
   resources :library, only: [:show]
