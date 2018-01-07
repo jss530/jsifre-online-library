@@ -1,3 +1,5 @@
+require 'pry'
+
 class CommentsController < ApplicationController
     before_action :authenticate_user!
     
@@ -15,9 +17,9 @@ class CommentsController < ApplicationController
     def create
      @book = Book.find(params[:book_id])
      @comment = @book.comments.new(comment_params)
-     
+     @comment.user_id = current_user.id
+
      if @comment.save
-       @comment.update(user_id: current_user.id)
        flash[:success] = "Your comment has been added!"
        redirect_to book_path(@book)
      else
