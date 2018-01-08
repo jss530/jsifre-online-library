@@ -22,13 +22,7 @@ class BooksController < ApplicationController
      @book = Book.new(book_params)
      
      if @book.save
-       if @book.genre_id == nil
-         @genre = Genre.last
-
-         @genre.update(name: [:genres_attributes][:name])
-         @book.update(genre_id: @genre.id)
-       end
-       @book.update(user_id: current_user.id)
+       @book.update(user_id: current_user.id, owner_number: current_user.id)
        current_user.owned_books << @book
        flash[:success] = "Your book has been added!"
        redirect_to library_path(current_user.id)
@@ -68,7 +62,7 @@ class BooksController < ApplicationController
     def return_book
      @book = Book.find(params[:id]) 
      @book.return_book
-     @book.user_id = 1
+     @book.user_id = @book.owner_number
      flash[:success] = "Book has been returned!"
      redirect_to library_path(current_user.id)
     end
@@ -76,7 +70,7 @@ class BooksController < ApplicationController
     private
     
     def book_params
-      params.require(:book).permit(:title, :author, :year, :description, :genre_id, :genres_attributes => [:name])
+      params.require(:book).permit(:title, :author, :year, :description, :genre_id, :genres_attributes => [:id, :name])
     end
   
 end

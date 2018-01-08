@@ -16,11 +16,7 @@
        <%= f.collection_check_boxes :genre_id, Genre.all, :id, :name %>
       <br>
       <br>
-      <%= f.fields_for :genre, @book.create_genre do |g_form| %>
-        <%= g_form.label :name, "New Genre Name" %>
-        <%= g_form.text_field :name %>
-        
-      <% end %>
+
       <br>
       <br>
       <%= f.submit "Add book" %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180103013216) do
+ActiveRecord::Schema.define(version: 20180108172711) do
 
   create_table "books", force: :cascade do |t|
     t.string "title"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20180103013216) do
     t.integer "inventory"
     t.boolean "rented", default: false
     t.integer "genre_id"
+    t.integer "owner_number"
   end
 
   create_table "comments", force: :cascade do |t|

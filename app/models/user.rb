@@ -19,7 +19,7 @@ class User < ApplicationRecord
    end
    
    def owned_books
-     @owned_books = self.books.find_all {|book| book.rented == false}
+     @owned_books = self.books.find_all {|book| book.rented == false && book.owner_number == self.id}
    end
    
    def rented_books

@@ -2,7 +2,6 @@ class Book < ApplicationRecord
   belongs_to :user, optional: true
   belongs_to :genre, optional: true
   has_many :comments
-  accepts_nested_attributes_for :genre
  
   validates :title, presence: true
   validates :author, presence: true
@@ -25,6 +24,7 @@ class Book < ApplicationRecord
   
   def return_book
      self.inventory = self.inventory + 1
+     self.user_id = self.owner_number
      self.rented = false
      self.save
      self.user.credits = self.user.credits + self.cost
