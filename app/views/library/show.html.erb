@@ -22,7 +22,17 @@
         <ol>
         <% @owned_books.each do |book| %>
             <li><%=book.title%> by <%=book.author%></li>
+                <% if book.rented == true %>
+                <p>This book is rented.</p>
+                <% else %>
+                <p>This book is available to rent.</p>
+                <% end %>
             <%= link_to 'Delete book', book_path(book), method: :delete %> <%= link_to 'Edit book', edit_book_path(book) %>
+                <% if book.rented == true && book.user_id == current_user.id %>
+                <p><%= link_to 'Return book', return_path(book.id)%></p>
+                <% end %>
+                <br>
+                <br>
         <%end%>
         </ol>
     <% else %>
