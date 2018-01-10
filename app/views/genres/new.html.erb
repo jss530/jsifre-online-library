@@ -1,0 +1,28 @@
+<h1>Add a book and genre to the Online Library</h1>
+
+<h3>Please fill out the form below. Genre name and Book title and author are mandatory.</h3>
+
+<%= form_for @genre do |f| %>
+  <%= f.label :name, 'New Genre Name:' %><br>
+  <%= f.text_field :name %>
+  <br>
+  <br>
+  <strong>Your New Book:</strong>
+  <br>
+  <br>
+  <%= f.fields_for :books, @genre.books.build do |b| %>
+      <%= b.label :title, "Title:"%><br>
+      <%= b.text_field :title %><br>
+      <br>
+      <%= b.label :author, "Author:"%><br>
+      <%= b.text_field :author%><br>
+      <br>
+      <%= b.label :year, "Year of publication:"%><br>
+      <%= b.text_field :year%><br>
+      <br>
+      <%= b.label :description, "Write a short book summary:"%><br>
+      <%= b.text_area :description%><br>
+      <br>
+  <%= f.submit "Add Genre and Book!" %>
+  <% end %>
+<% end %>
