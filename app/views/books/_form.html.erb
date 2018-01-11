@@ -2,7 +2,9 @@
     <h3>The form below is to add a book to an existing genre at the library. If you'd like to add a new book AND genre, 
     <%=link_to 'click here', new_genre_path %>.</h3>
     
-    <%= form_for(@book) do |f| %>
+      <%= form_for @book, url: books_path, html: { multipart: true } do |f| %>
+      <%= f.file_field :image %><br>
+      <br>
       <%= f.label :title, "Title:"%><br>
       <%= f.text_field :title %><br>
       <br>

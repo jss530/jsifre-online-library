@@ -2,7 +2,6 @@ class Genre < ApplicationRecord
   has_many :books
   
   validates :name, uniqueness: true
-  accepts_nested_attributes_for :books
 
   def books_attributes=(books_attributes)
     books_attributes.values.each do |book_attributes|

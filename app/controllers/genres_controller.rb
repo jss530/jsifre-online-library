@@ -28,7 +28,7 @@ class GenresController < ApplicationController
     private
     
     def genre_params
-      params.require(:genre).permit(:name, books_attributes: [:id, :title, :author, :year, :description])
+      params.require(:genre).permit(:name, books_attributes: [:id, :title, :image, :author, :year, :description])
     end
 
 end

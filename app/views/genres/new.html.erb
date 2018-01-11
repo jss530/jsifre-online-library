@@ -1,8 +1,8 @@
 <h1>Add a book and genre to the Online Library</h1>
 
-<h3>Please fill out the form below. Genre name and Book title and author are mandatory.</h3>
+<h3>Please fill out the form below. Genre name and Book title and author are mandatory. You can upload a photo of the cover as well.</h3>
 
-<%= form_for @genre do |f| %>
+<%= form_for @genre, url: books_path, html: { multipart: true } do |f| %>
   <%= f.label :name, 'New Genre Name:' %><br>
   <%= f.text_field :name %>
   <br>
@@ -11,6 +11,8 @@
   <br>
   <br>
   <%= f.fields_for :books, @genre.books.build do |b| %>
+      <%= b.file_field :image %><br>
+      <br>
       <%= b.label :title, "Title:"%><br>
       <%= b.text_field :title %><br>
       <br>
