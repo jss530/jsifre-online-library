@@ -34,6 +34,9 @@ class Book < ApplicationRecord
   def self.newest_books
     order('created_at desc').limit(5)
   end
-
+  
+  def newest_comments
+    self.comments.order('created_at desc').limit(3)
+  end
   
 end

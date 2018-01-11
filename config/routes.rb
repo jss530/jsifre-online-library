@@ -7,11 +7,11 @@ Rails.application.routes.draw do
   end
   
   resources :genres 
-  
+
   resources :books
 
   resources :books, only: [:show] do
-    resources :comments, only: [:show, :new, :create, :destroy]
+    resources :comments, only: [:index, :show, :new, :create, :destroy]
   end
 
   resources :library, only: [:show]

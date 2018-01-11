@@ -1,0 +1,12 @@
+<h1><%= @book.title%>'s Comments</h1>
+
+<ol>
+    <p><%@comments.each do |comment|%></p>
+       <li><strong>Comment by <%=comment.commenter%></strong></li><br>
+       <%= comment.body %>
+       <br>
+       <% if comment.user_id == current_user.id %>
+       <%= link_to 'Delete Comment', book_comment_path(@book, comment), method: :delete %><br>
+       <% end %>
+       <br>
+    <% end %>

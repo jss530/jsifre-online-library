@@ -3,6 +3,11 @@ require 'pry'
 class CommentsController < ApplicationController
     before_action :authenticate_user!
     
+    def index
+      @book = Book.find(params[:book_id])
+      @comments = @book.comments.all
+    end
+    
     def show
     end
     
