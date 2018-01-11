@@ -23,12 +23,12 @@ class Book < ApplicationRecord
   end
   
   def return_book
+     self.user.credits = self.user.credits + self.cost
+     self.user.save
      self.inventory = self.inventory + 1
      self.user_id = self.owner_number
      self.rented = false
      self.save
-     self.user.credits = self.user.credits + self.cost
-     self.user.save
   end
   
   def self.newest_books
