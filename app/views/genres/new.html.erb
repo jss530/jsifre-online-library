@@ -23,6 +23,8 @@
       <%= b.label :description, "Write a short book summary:"%><br>
       <%= b.text_area :description%><br>
       <br>
+      <%= b.hidden_field :user_id, :value => current_user.id %>
+      <%= b.hidden_field :owner_number, :value => current_user.id %>
   <%= f.submit "Add Genre and Book!" %>
   <% end %>
 <% end %>

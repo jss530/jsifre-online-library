@@ -17,6 +17,7 @@
     <% end %>
 
 <h3>Books I Own </h3>
+    <p><%=link_to 'Click here to add a book to your Books I Own list', new_book_path%></p>
 
     <% if @owned_books != [] %>
         <ol>
@@ -39,7 +40,6 @@
         <p>Your list is currently empty.</p>
     <% end %>
     <br>
-    <p><%=link_to 'Click here to add a book to your Books I Own list', new_book_path%></p>
     
 <h3>My Comments </h3>
     <ol>

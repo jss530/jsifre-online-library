@@ -15,9 +15,16 @@ class GenresController < ApplicationController
     
     def create
       @genre = Genre.new(genre_params)
-      @genre.save
+      if @genre.save
+        @genre.books.first.update(user_id: current_user.id, owner_number: current_user.id)
+        flash[:success] = "Your genre and book have been added!"
+        redirect_to genre_path(@genre)
+      else
+        flash[:success] = "Something went wrong. Please try again."
+        render action: 'new'
+      end
     end
-    
+
     private
     
     def genre_params

@@ -6,7 +6,7 @@ class Genre < ApplicationRecord
 
   def books_attributes=(books_attributes)
     books_attributes.values.each do |book_attributes|
-      unless book_attributes[:title, :author].blank?
+      unless book_attributes.blank?
       book = Book.find_or_create_by(book_attributes)
       self.books << book
       end
