@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180111215307) do
+ActiveRecord::Schema.define(version: 20180111215308) do
 
   create_table "books", force: :cascade do |t|
     t.string "title"
@@ -21,9 +21,9 @@ ActiveRecord::Schema.define(version: 20180111215307) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "genre_id"
     t.integer "inventory"
     t.boolean "rented", default: false
-    t.integer "genre_id"
     t.integer "owner_number"
     t.string "image_file_name"
     t.string "image_content_type"
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 20180111215307) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
-    t.integer "credits"
+    t.integer "credits", default: 5
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "provider"
