@@ -2,11 +2,11 @@ require 'pry'
 
 class LibraryController < ApplicationController
    helper_method :my_library
-  
+
   def show
     @my_library = Library.find(params[:id])
-    
-    if user_signed_in? && current_user.id == @my_library.id
+
+    if user_signed_in? && current_user.id == @my_library.user_id
         @rented_books = @my_library.user.rented_books
         @owned_books = @my_library.user.owned_books
     else
@@ -14,5 +14,5 @@ class LibraryController < ApplicationController
         redirect_to root_path
     end
   end
-  
+
 end

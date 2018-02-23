@@ -1,4 +1,4 @@
-<h1><%= current_user.email%>'s Library</h1>
+<h1><%= current_user.username%>'s Library</h1>
 
 <h3>You have <%= current_user.credits%> credit(s) available.</h3>
 
@@ -40,12 +40,12 @@
         <p>Your list is currently empty.</p>
     <% end %>
     <br>
-    
+
 <h3>My Comments </h3>
     <ol>
     <% @my_library.user.commented_books.each do |book| %>
         <li><%=link_to book.title, book_path(book.id)%></li>
-            
+
             <% book.comments.each do |comment| %>
             <strong><p><%=comment.commenter%></p></strong>
             <p><%=comment.body%></p>

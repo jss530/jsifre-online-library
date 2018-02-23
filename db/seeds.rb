@@ -18,9 +18,9 @@ Book.create!(title: "A People's History of the United States", author: "Howard Z
 
 Book.create!(title: "Many Lives Many Masters", author: "Brian Weiss", year: 2000, description: "The true story of a prominent psychiatrist", inventory: 1, user_id: 1, genre_id: 6, owner_number: 1)
 
-User.create!(email: 'jackie@me.com', password: '12345678', credits: 5)
+User.create!(username: 'Jacqlene', password: '12345678', credits: 5)
 
-User.create!(email: 'david@me.com', password: '12345678', credits: 1)
+User.create!(username: 'David', password: '12345678', credits: 1)
 
 Library.create!(user_id: 1)
 Library.create!(user_id: 2)
