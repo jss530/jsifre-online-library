@@ -33,7 +33,7 @@ gem 'devise'
 gem 'omniauth-twitter'
 gem 'dotenv-rails'
 gem 'paperclip'
-
+gem 'faker'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

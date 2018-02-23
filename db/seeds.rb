@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'faker'
+
 Genre.create!([{ name: 'Fiction' }, { name: 'Romance' }, { name: 'Sci-fi' }, { name: 'History' }, { name: 'Young Adult' }, { name: 'Self-help' }, { name: 'Autobiographies' }, { name: 'Travel' }])
 
 Book.create!(title: "Mr. Penumbra's 24-Hour Bookstore", author: "Robin Sloan", year: 2013, description: "It's exactly what it sounds like! An establishment you have to enter and will never want to leave.", inventory: 2, user_id: 1, genre_id: 1, owner_number: 1)
@@ -18,11 +20,7 @@ Book.create!(title: "A People's History of the United States", author: "Howard Z
 
 Book.create!(title: "Many Lives Many Masters", author: "Brian Weiss", year: 2000, description: "The true story of a prominent psychiatrist", inventory: 1, user_id: 1, genre_id: 6, owner_number: 1)
 
-User.create!(username: 'Jacqlene', password: '12345678', credits: 5)
-
-User.create!(username: 'David', password: '12345678', credits: 1)
-
-Library.create!(user_id: 1)
-Library.create!(user_id: 2)
+User.create!(username: "David", password: "123456")
+User.create!(username: "Cindy", password: "123456")
 
 Comment.create!(body: 'I loved this.', book_id: 1)

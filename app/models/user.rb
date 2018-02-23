@@ -7,9 +7,8 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:twitter]
-
-  validates :username, uniqueness: { case_sensitive: false }
+         :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:twitter], :authentication_keys => [:username]
+  validates :username, uniqueness: true
 
    def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -20,7 +19,11 @@ class User < ApplicationRecord
 
    def email_required?
      false
-  end
+   end
+
+   def email_changed?
+    false
+   end
 
    def owned_books
      @owned_books = self.books.find_all {|book| book.owner_number == self.id}
