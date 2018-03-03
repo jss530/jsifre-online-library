@@ -2,7 +2,7 @@
 
 <h3>Please fill out the form below. Genre name and Book title and author are mandatory. You can upload a photo of the cover as well.</h3>
 
-<%= form_for @genre, url: books_path, html: { multipart: true } do |f| %>
+<%= form_for @genre, html: { multipart: true } do |f| %>
   <%= f.label :name, 'New Genre Name:' %><br>
   <%= f.text_field :name %>
   <br>
