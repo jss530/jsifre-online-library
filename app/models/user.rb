@@ -25,4 +25,12 @@ class User < ApplicationRecord
     @rented_books = self.books.find_all {|book| book.rented == true && book.owner_number != self.id}
    end
 
+   def create_library
+    new_library = Library.new
+    self.id = new_library.user_id
+    new_library.save
+   end
+
+
+
 end

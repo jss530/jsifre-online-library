@@ -1,10 +1,15 @@
 require 'pry'
 
 class LibraryController < ApplicationController
-   helper_method :my_library
 
   def show
-    @my_library = Library.find(params[:id])
+      if current_user.library
+        @my_library = current_user.library
+      else
+        current_user.create_library
+        @my_library = current_user.library
+        binding.pry
+      end
 
     if user_signed_in? && current_user.id == @my_library.user_id
         @rented_books = @my_library.user.rented_books
