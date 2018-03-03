@@ -35,6 +35,7 @@ class BooksController < ApplicationController
      @book = Book.find(params[:id])
 
      if @book.update(book_params)
+       flash[:update_success] = "Your book has been updated!"
        redirect_to library_path(current_user.id)
      else
        flash[:try_again] = "Something went wrong - please try again."
