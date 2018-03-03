@@ -22,5 +22,3 @@ Book.create!(title: "Many Lives Many Masters", author: "Brian Weiss", year: 2000
 
 User.create!(username: "David", password: "123456")
 User.create!(username: "Cindy", password: "123456")
-
-Comment.create!(body: 'I loved this.', book_id: 1)

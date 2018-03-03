@@ -47,7 +47,7 @@
         <li><%=link_to book.title, book_path(book.id)%></li>
 
             <% book.comments.each do |comment| %>
-            <strong><p><%=comment.commenter%></p></strong>
+            <strong><p><%=comment.user.username%></p></strong>
             <p><%=comment.body%></p>
             <% end %>
         <br>

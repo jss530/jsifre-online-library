@@ -22,7 +22,7 @@
    <%= link_to "Click here to view all of #{@book.title}'s comments", book_comments_path(@book, @book.comments) %>
       <ol>
       <% @book.newest_comments.each do |comment| %>
-          <li><strong>Comment by <%=comment.commenter%></strong></li><br>
+          <li><strong>Comment by <%=comment.user.username%></strong></li><br>
           <%= comment.body %>
           <br>
              <% if comment.user_id == current_user.id %>
