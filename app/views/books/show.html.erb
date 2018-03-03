@@ -1,7 +1,7 @@
 <h2> <%= @book.title %></h2>
 <h3>Author: <%= @book.author %></h3>
 <h4>Year: <%= @book.year %></h4>
-<%= link_to image_tag(@book.image.url(:med)), @book.image.url %>
+<%= link_to image_tag(@book.image.url(:thumb)), @book.image.url %>
 <p><strong>Description:</strong> <%= @book.description %></p>
 
 <p><strong>Availability:</strong></p>
@@ -34,8 +34,7 @@
    <% else %>
       <p>There are no comments yet. Add yours below!</p>
    <% end %>
-      
-      
+
+
 <h2>Add a comment:</h2>
 <%= render partial: "comments/form", locals: {book: @book} %>
-

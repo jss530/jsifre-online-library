@@ -32,7 +32,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
 gem 'omniauth-twitter'
 gem 'dotenv-rails'
-gem 'paperclip'
+gem 'paperclip', '~> 5.2.0'
 gem 'faker'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

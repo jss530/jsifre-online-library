@@ -122,7 +122,7 @@ GEM
       omniauth-oauth (~> 1.1)
       rack
     orm_adapter (0.5.0)
-    paperclip (5.1.0)
+    paperclip (5.2.1)
       activemodel (>= 4.2.0)
       activesupport (>= 4.2.0)
       cocaine (~> 0.5.5)
@@ -232,7 +232,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   omniauth-twitter
-  paperclip
+  paperclip (~> 5.2.0)
   pry
   puma (~> 3.7)
   rails (~> 5.1.4)

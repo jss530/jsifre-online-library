@@ -13,6 +13,10 @@ class GenresController < ApplicationController
       @genre = Genre.new
     end
 
+    def edit
+     @genre = Genre.find(params[:id])
+    end
+
     def create
       @genre = Genre.new(genre_params)
 
@@ -24,6 +28,11 @@ class GenresController < ApplicationController
         flash[:success] = "Something went wrong. Please try again."
         render action: 'new'
       end
+    end
+
+    def update
+     @genre = Genre.find(params[:id])
+     @genre.update(genre_params)
     end
 
     private

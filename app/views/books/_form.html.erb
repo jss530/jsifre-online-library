@@ -3,6 +3,7 @@
     <%=link_to 'click here', new_genre_path %>.</h3>
 
       <%= form_for @book, html: { multipart: true } do |f| %>
+      <%= f.label :image %>
       <%= f.file_field :image %><br>
       <br>
       <%= f.label :title, "Title:"%><br>
