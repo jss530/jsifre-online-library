@@ -3,14 +3,8 @@ require 'pry'
 class LibraryController < ApplicationController
 
   def show
-      if current_user.library
-        @my_library = current_user.library
-      else
-        current_user.create_library
-        @my_library = current_user.library
-        binding.pry
-      end
-
+      @my_library = Library.find_or_create_by(:user_id => current_user.id)
+      
     if user_signed_in? && current_user.id == @my_library.user_id
         @rented_books = @my_library.user.rented_books
         @owned_books = @my_library.user.owned_books
