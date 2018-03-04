@@ -1,9 +1,6 @@
-$(document).ready(function () {
-	attachListeners();
-});
-
-function attachListeners(){
-  $("#all_comments").click(function(){
+$(function() {
+  $("a.all_comments").on("click", function(e){
     alert("You clicked this link!!!!")
+    e.preventDefault();
   })
-};
+});
