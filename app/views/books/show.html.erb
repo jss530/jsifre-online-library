@@ -19,7 +19,9 @@
 
 <h2>Comments</h2>
    <% if @book.comments != [] %>
-   <%= link_to "Click here to view all of #{@book.title}'s comments", book_comments_path(@book, @book.comments) %>
+   <div id="all_comments">
+     <%= link_to "Click here to view all of #{@book.title}'s comments", book_comments_path(@book, @book.comments) %>
+   </div>
       <ol>
       <% @book.newest_comments.each do |comment| %>
           <li><strong>Comment by <%=comment.user.username%></strong></li><br>
