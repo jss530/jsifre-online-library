@@ -19,18 +19,10 @@
 
 <h2>Comments</h2>
    <% if @book.comments != [] %>
-     <%= link_to "Click here to view all of #{@book.title}'s comments", book_comments_path(@book, @book.comments), class: "all_comments" %>
-      <ol>
-      <% @book.newest_comments.each do |comment| %>
-          <li><strong>Comment by <%=comment.user.username%></strong></li><br>
-          <%= comment.body %>
-          <br>
-             <% if comment.user_id == current_user.id %>
-                <%= link_to 'Delete Comment', book_comment_path(@book, comment), method: :delete %><br>
-             <% end %>
-          <br>
-          <% end %>
-      </ol>
+     <%= link_to "Click here to load all of #{@book.title}'s comments", book_comments_path(@book, @book.comments), class: "all_comments" %>
+     <div class="comments">
+
+    </div>
    <% else %>
       <p>There are no comments yet. Add yours below!</p>
    <% end %>

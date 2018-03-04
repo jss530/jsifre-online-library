@@ -8,9 +8,12 @@ class CommentsController < ApplicationController
     def index
       @book = Book.find(params[:book_id])
       @comments = @book.comments.all
+
+      render 'comments/index', :layout => false
     end
 
     def show
+      render 'comments/index', :layout => false
     end
 
     def new

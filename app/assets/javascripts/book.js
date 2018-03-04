@@ -1,6 +1,11 @@
 $(function() {
-  $("a.all_comments").on("click", function(e){
-    alert("You clicked this link!!!!")
-    e.preventDefault();
+  $("a.all_comments").on("click", function(){
+    $.ajax({
+      method: "GET",
+      url: this.href
+    }).done(function(response){
+      $("div.comments").html(response)
+    })
+
   })
 });
