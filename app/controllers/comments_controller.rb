@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
       @book = Book.find(params[:book_id])
       @comments = @book.comments.all
 
-      render 'comments/index', :layout => false
+      render :layout => false
     end
 
     def show
