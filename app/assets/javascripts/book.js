@@ -21,3 +21,23 @@ $(function() {
     e.preventDefault();
   })
 });
+
+$(function() {
+  $("#new_comment").on("submit", function(e) {
+    url = this.action
+
+    data = $(this).serialize();
+
+    $.ajax({
+      type: "POST",
+      url: url,
+      data: data,
+      success: function(response) {
+        $("#comment_body").val("");
+        var $ol = $("div.comments ol")
+        $ol.append(response);
+      }
+    });
+    e.preventDefault()
+  })
+});

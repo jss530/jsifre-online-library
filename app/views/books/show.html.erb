@@ -29,4 +29,8 @@
 
 
 <h2>Add a comment:</h2>
-<%= render partial: "comments/form", locals: {book: @book} %>
+
+<%= form_for(@comment, :url => book_comments_path(@book)) do |f| %>
+   <%= f.text_area :body %>
+   <p><%= f.submit %></p>
+<% end %>
