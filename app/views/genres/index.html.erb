@@ -2,16 +2,19 @@
 
 <h2>Browse by genre:</h2>
 
+<div class="show_books">
+
+</div>
+
     <% @genres.each do |genre| %>
-        <p><%= link_to genre.name, genre_path(genre.id) %></p>
+        <p><%= link_to genre.name, genre_path(genre.id), class: "show_genre" %></p>
     <% end %>
-    
+
+
 <h2>New to the library</h2>
 <p>These books are brand spankin' new!</p>
     <ol>
     <% Book.newest_books.each do |book| %>
-        <li><%=link_to book.title, book_path(book.id)%> by <%=book.author%></li> 
+        <li><%=link_to book.title, book_path(book.id)%> by <%=book.author%></li>
     <% end %>
     </ol>
-    
-

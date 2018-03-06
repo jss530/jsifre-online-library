@@ -7,6 +7,8 @@ class GenresController < ApplicationController
 
     def show
       @genre = Genre.find(params[:id])
+
+      render :layout => false
     end
 
     def new

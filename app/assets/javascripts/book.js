@@ -9,3 +9,15 @@ $(function() {
     e.preventDefault();
   })
 });
+
+$(function() {
+  $("a.show_genre").on("click", function(e){
+    $.ajax({
+     method: "GET",
+     url: this.href
+    }).done(function(response){
+      $("div.show_books").html(response)
+      })
+    e.preventDefault();
+  })
+});
