@@ -63,13 +63,27 @@ $(function() {
 });
 
 // $(function() {
-//   $("#new_comment").on("submit", function(e) {
+//   $("#new_book").on("submit", function(e) {
 //     url = this.action
 //
 //     data = {
 //       'authenticity_token': $("input[name='authenticity_token']").val(),
-//       'comment': {
-//           'body': $("#comment_body").val()
+//       'book': {
+//           'book_image': $("#book_image").val(),
+//           'book_title': $("#book_title").val(),
+//           'book_author': $("#book_author").val(),
+//           'book_year': $("#book_year").val(),
+//           'book_description': $("#book_description").val(),
+//           'book_genre_id_1': $("#book_genre_id_1").val(),
+          // 'book_genre_id_2': $("#book_genre_id_2").val(),
+          // 'book_genre_id_3': $("#book_genre_id_3").val(),
+          // 'book_genre_id_4': $("#book_genre_id_4").val(),
+          // 'book_genre_id_5': $("#book_genre_id_5").val(),
+          // 'book_genre_id_6': $("#book_genre_id_6").val(),
+          // 'book_genre_id_7': $("#book_genre_id_7").val(),
+          // 'book_genre_id_8': $("#book_genre_id_8").val(),
+          // 'book_genre_id_9': $("#book_genre_id_9").val(),
+          // 'book_genre_id_10': $("#book_genre_id_10").val(),
 //       }
 //     };
 //
@@ -78,11 +92,9 @@ $(function() {
 //       url: url,
 //       data: data,
 //       success: function(response) {
-//         $("#comment_body").val("")
+//         $("#book_image").val(""),
 //         var $ol = $("div.comments ol")
-//         var $new = $("div.new_comment")
 //         $ol.append(response);
-//         $new.append(response);
 //       }
 //     });
 //
