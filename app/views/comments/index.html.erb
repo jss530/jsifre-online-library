@@ -1,5 +1,3 @@
-<h1><%= @book.title%>'s Comments</h1>
-
 <ol>
     <p><%@comments.each do |comment|%></p>
        <li><strong>Comment by <%=comment.user.username%></strong></li><br>
@@ -11,3 +9,4 @@
        <% end %>
        <br>
     <% end %>
+</ol>

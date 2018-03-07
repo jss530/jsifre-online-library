@@ -9,7 +9,10 @@ class CommentsController < ApplicationController
       @book = Book.find(params[:book_id])
       @comments = @book.comments.all
 
-      render :layout => false
+      respond_to do |format|
+        format.html {render 'index.html', :layout => false}
+        format.js {render 'index.js', :layout => false}
+      end
     end
 
     def show
@@ -28,7 +31,11 @@ class CommentsController < ApplicationController
 
      if @comment.save
        flash[:success] = "Your comment has been added!"
-       redirect_to book_path(@book)
+
+       respond_to do |format|
+         format.html {render 'index.html', :layout => false}
+         format.js {render 'index.js', :layout => false}
+       end
      else
        flash[:try_again] = "Something went wrong - please try again."
        redirect_to book_path(@book)
