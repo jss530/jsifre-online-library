@@ -17,7 +17,11 @@
     <% end %>
 
 <h3>Books I Own </h3>
-    <p><%=link_to 'Click here to add a book to your Books I Own list', new_book_path%></p>
+    <p><%=link_to 'Click here to add a book to your Books I Own list', new_book_path, class: "add_book"%></p>
+
+    <div class="new_book_form">
+
+    </div>
 
     <% if @owned_books != [] %>
         <ol>

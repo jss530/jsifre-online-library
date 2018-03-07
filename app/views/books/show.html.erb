@@ -19,19 +19,23 @@
 
 <h2>Comments</h2>
    <% if @book.comments != [] %>
-       <% @book.newest_comment.each do |comment| %>
-       <strong>Comment by <%= comment.user.username%></strong><br>
-       <%= comment.body %>
-       <br>
-       <br>
-         <% if comment.user_id == current_user.id %>
-         <%= link_to 'Delete Comment', book_comment_path(@book, comment), method: :delete %><br>
-         <% end %>
-      <% end %>
+
+       <div class="new_comment">
+         <% @book.newest_comment.each do |comment| %>
+         <strong>Comment by <%= comment.user.username%></strong><br>
+         <%= comment.body %>
+         <br>
+         <br>
+           <% if comment.user_id == current_user.id %>
+           <%= link_to 'Delete Comment', book_comment_path(@book, comment), method: :delete %><br>
+           <% end %>
+        <% end %>
+     </div>
+
      <br>
      <%= link_to "Click here to load all of #{@book.title}'s comments", book_comments_path(@book, @book.comments), class: "all_comments" %>
      <div class="comments">
-
+  
      </div>
 
    <% else %>
@@ -41,7 +45,7 @@
 
 <h2>Add a comment:</h2>
 
-<%= form_for(@comment, :url => book_comments_path(@book)) do |f| %>
+<%= form_for([@book, @comment]) do |f| %>
    <%= f.text_area :body %>
    <p><%= f.submit %></p>
 <% end %>
