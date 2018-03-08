@@ -2,6 +2,7 @@ class Book < ApplicationRecord
   belongs_to :user, optional: true
   belongs_to :genre, optional: true
   has_many :comments
+  accepts_nested_attributes_for :genre
 
   validates :title, presence: true
   validates :author, presence: true

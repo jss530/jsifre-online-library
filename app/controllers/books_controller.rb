@@ -14,7 +14,7 @@ class BooksController < ApplicationController
 
     def new
      @book = Book.new
-
+     @book.build_genre
     end
 
     def edit
@@ -24,7 +24,7 @@ class BooksController < ApplicationController
     def create
      @book = Book.new(book_params)
      if @book.save
-       @book.update(user_id: current_user.id, owner_number: current_user.id)
+       @book.update(user_id: current_user.id, owner_number: current_user.id, inventory: 1)
        current_user.owned_books << @book
        flash[:success] = "Your book has been added!"
        redirect_to library_path(current_user.id)
@@ -72,7 +72,7 @@ class BooksController < ApplicationController
     private
 
     def book_params
-      params.require(:book).permit(:title, :image, :author, :year, :description, :genre_id, :genres_attributes => [:id, :name])
+      params.require(:book).permit(:title, :image, :author, :year, :description, :genres_attributes => [:id, :name])
     end
 
 end
