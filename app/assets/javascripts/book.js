@@ -22,10 +22,6 @@ $(function() {
   })
 });
 
-// $(function() {
-//     $("#carousel-text").slick();
-// })
-
 $(function() {
   $('#carousel-text').slick({
     centerMode: true,

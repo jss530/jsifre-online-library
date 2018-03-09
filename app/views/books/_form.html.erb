@@ -19,7 +19,7 @@
       <%= f.text_area :description%><br>
       <br>
       <h3> Choose a genre: </h3>
-       <%= f.collection_check_boxes :genre_id, Genre.all, :id, :name %>
+       <%= f.collection_radio_buttons :genre_id, Genre.all, :id, :name %>
       <br>
       <br>
       <br>
