@@ -36,6 +36,7 @@ gem 'paperclip', '~> 5.2.0'
 gem 'faker'
 gem 'active_model_serializers'
 gem 'jquery-rails'
+gem 'jquery-slick-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
