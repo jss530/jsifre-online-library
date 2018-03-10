@@ -17,9 +17,9 @@
 
 #carousel-text {
     width: 1170px;
-    padding: 30px 0;
-    border: 10px;
+    padding: 30px 100px 30px 100px;
+    border: 100px;
     font-size: 18px;
     color: #000000;
-    text-align: left;
+    bottom: 0px;
 }
