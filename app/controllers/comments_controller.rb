@@ -32,8 +32,10 @@ class CommentsController < ApplicationController
         format.html do
           flash[:success] = 'Comment posted.'
           redirect_to book_path(@book)
-          end
-       format.js
+        end
+         format.js do
+           render json => @book
+         end
        end
      else
        flash[:try_again] = "Something went wrong - please try again."
