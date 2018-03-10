@@ -4,7 +4,7 @@ function Comment(attributes) {
 }
 
 Comment.prototype.renderLI = function() {
-  
+   "<li>" + Comment + "</li>"
 }
 
 $(function() {
