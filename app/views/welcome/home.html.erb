@@ -1,9 +1,12 @@
 <h1> Welcome to the Online Library! </h1>
 
 <p>The Online Library makes you both the librarian and reader: Lend out the e-books you own,
-  and borrow e-books from other users. Every user starts with 5 credits to rent books of their
-  choosing. Most books are only 1 credit to rent, unless otherwise specified. Once you return a book,
-  you'll get your credit back so you can rent another!</p>
+  and borrow e-books from other users.
+  <br>
+  Every user starts with 5 credits to rent books of their
+  choosing. Most books are only 1 credit to rent, unless otherwise specified.
+  <br>
+  Once you return a book, you'll get your credit back so you can rent another!</p>
 
 <% if user_signed_in? %>
 <%= link_to 'Enter the library', genres_path %>
