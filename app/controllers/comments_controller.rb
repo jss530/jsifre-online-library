@@ -34,7 +34,7 @@ class CommentsController < ApplicationController
           redirect_to book_path(@book)
         end
          format.js do
-           render json => @book
+           render :json => @book
          end
        end
      else

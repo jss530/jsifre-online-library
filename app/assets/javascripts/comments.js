@@ -1,8 +1,3 @@
-function Comment(attributes) {
-  this.body = attributes.name;
-  this.id = attributes.id
-}
-
 Comment.prototype.renderLI = function() {
    "<li>" + Comment + "</li>"
 }

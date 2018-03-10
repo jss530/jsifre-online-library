@@ -14,5 +14,4 @@
 //= require jquery
 //= require jquery_ujs
 //= require book
-//= require comments
 //= require jquery.slick
