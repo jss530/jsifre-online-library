@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
       @book = Book.find(params[:book_id])
       @comments = @book.comments.all
 
-      render :layout => false
+      render json: @comments, status: 200
     end
 
     def show
