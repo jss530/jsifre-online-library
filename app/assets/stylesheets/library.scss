@@ -25,6 +25,7 @@ body {
 
 a#library-button {
     display: block;
+    text-decoration: none;
     width: 115px;
     height: 25px;
     background: #b0c4de;
@@ -33,4 +34,8 @@ a#library-button {
     border-radius: 5px;
     color: white;
     font-weight: bold;
+}
+
+a#library-button:hover {
+  background: #0000cd;
 }

@@ -7,7 +7,7 @@
 </div>
 
     <% @genres.each do |genre| %>
-        <p><%= link_to genre.name, genre_path(genre.id), class: "show_genre" %></p>
+        <p><%= link_to genre.name, genre_path(genre.id), class: "show_genre", id: "genre-list" %></p>
     <% end %>
 
 

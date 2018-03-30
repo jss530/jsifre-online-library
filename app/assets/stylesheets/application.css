@@ -31,6 +31,7 @@
 
 a#button {
     display: block;
+    text-decoration: none;
     width: 115px;
     height: 25px;
     background: #4E9CAF;
@@ -39,4 +40,8 @@ a#button {
     border-radius: 5px;
     color: white;
     font-weight: bold;
+}
+
+a#button:hover {
+  background: #1e90ff
 }
