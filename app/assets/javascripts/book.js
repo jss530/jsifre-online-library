@@ -16,10 +16,14 @@ $(function() {
   $("a.show_genre").on("click", function(e){
     $.ajax({
      method: "GET",
-     url: this.href
+     url: `${this.href}.json`
     }).done(function(response){
-      $("div.show_books").html(response)
-      })
+      $("div.show_books").html(response.books.map(resp => {
+        return `<h3><strong> ${resp.title} </strong></h3>
+                <p> by ${resp.author}</p>
+                <a href="books/${resp.id}">View book</a>`
+      }))
+    })
     e.preventDefault();
   })
 });
