@@ -30,9 +30,10 @@
                 <% else %>
                 <p>This book is available to rent.</p>
                 <% end %>
-            <%= link_to 'Delete book', book_path(book), method: :delete %> <%= link_to 'Edit book', edit_book_path(book) %>
+            <%= link_to 'Delete book', book_path(book), :id => "library-button", method: :delete %><br>
+            <%= link_to 'Edit book', edit_book_path(book), :id => "library-button" %>
                 <% if book.rented == true && book.user_id == current_user.id %>
-                <p><%= link_to 'Return book', return_path(book.id)%></p>
+                <p><%= link_to 'Return book', return_path(book.id), :id => "library-button"%></p>
                 <% end %>
                 <br>
                 <br>

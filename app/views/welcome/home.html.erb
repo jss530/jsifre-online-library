@@ -10,8 +10,8 @@
   <br>
   Once you return a book, you'll get your credit back so you can rent another!</p>
 
-<% if user_signed_in? %>
-<%= link_to 'Enter the library', genres_path %>
-<% end %>
-
 </div>
+
+<% if user_signed_in? %>
+<%= link_to 'Enter the library', genres_path, :id => "button"  %>
+<% end %>

@@ -22,3 +22,15 @@ body {
   background-color: #FFFFFF;
   width: 50%
 }
+
+a#library-button {
+    display: block;
+    width: 115px;
+    height: 25px;
+    background: #b0c4de;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
