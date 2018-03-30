@@ -2,10 +2,13 @@ $(function() {
   $("a.all_comments").on("click", function(e){
     $.ajax({
      method: "GET",
-     url: this.href
+     url: `${this.href}.json`
     }).done(function(response){
-      $("div.comments").html(response)
-      })
+      $("div.comments").html(response.map(resp => {
+        debugger
+        return `<p> ${resp.body} </p>`
+      }))
+     })
     e.preventDefault();
   })
 });

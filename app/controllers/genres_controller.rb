@@ -8,7 +8,10 @@ class GenresController < ApplicationController
     def show
       @genre = Genre.find(params[:id])
 
-      render :layout => false
+      respond_to do |format|
+         format.html { render :show }
+         format.json { render json: @genre}
+       end
     end
 
     def new

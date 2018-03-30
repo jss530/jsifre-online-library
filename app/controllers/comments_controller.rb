@@ -9,7 +9,11 @@ class CommentsController < ApplicationController
       @book = Book.find(params[:book_id])
       @comments = @book.comments.all
 
-      render json: @comments, status: 200
+      respond_to do |format|
+         format.html { render :index }
+         format.json { render json: @comments}
+       end
+       # this is the default template
     end
 
     def show
