@@ -1,6 +1,8 @@
-<h1> Welcome to the Online Library! </h1>
+<div class="welcome">
 
-<p>The Online Library makes you both the librarian and reader: Lend out the e-books you own,
+<h1 id="intro"> Welcome to the Online Library! </h1>
+
+<p id="intro">The Online Library makes you both the librarian and reader: Lend out the e-books you own,
   and borrow e-books from other users.
   <br>
   Every user starts with 5 credits to rent books of their
@@ -11,3 +13,5 @@
 <% if user_signed_in? %>
 <%= link_to 'Enter the library', genres_path %>
 <% end %>
+
+</div>

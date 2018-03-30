@@ -3,7 +3,22 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-  background-image: image-url('Background_3.jpg');
+  background-image: image-url('Background.jpg');
   background-size: 100%;
   font-family: 'CaladeaRegular'
+}
+
+.welcome {
+  background-color: #FFFFFF
+}
+
+#intro {
+  font-weight: bold;
+  font-style: italic;
+  color: #191970
+}
+
+.library {
+  background-color: #FFFFFF;
+  width: 50%
 }

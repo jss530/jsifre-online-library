@@ -23,3 +23,8 @@
     color: #000000;
     bottom: 0px;
 }
+
+.signed-in-confirm {
+  color: #FFFFFF;
+  font-style: italic;
+}
