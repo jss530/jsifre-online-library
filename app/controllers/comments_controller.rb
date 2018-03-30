@@ -13,7 +13,6 @@ class CommentsController < ApplicationController
          format.html { render :index }
          format.json { render json: @comments}
        end
-       # this is the default template
     end
 
     def show
@@ -31,7 +30,6 @@ class CommentsController < ApplicationController
      @comment.user_id = current_user.id
 
      if @comment.save
-
        respond_to do |format|
         format.html do
           flash[:success] = 'Comment posted.'

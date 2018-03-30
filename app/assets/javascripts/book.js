@@ -5,8 +5,7 @@ $(function() {
      url: `${this.href}.json`
     }).done(function(response){
       $("div.comments").html(response.map(resp => {
-        debugger
-        return `<p> ${resp.body} </p>`
+        return `<p><strong> ${resp.user.username} </strong>: ${resp.body} </p>`
       }))
      })
     e.preventDefault();
@@ -84,6 +83,7 @@ $(function() {
       var commentP = comment.renderP()
 
       $(".new").append(commentP)
+
      })
     .error(function(response) {
       console.log("error!", response)
