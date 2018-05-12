@@ -29,7 +29,7 @@
   font-style: italic;
 }
 
-a#button {
+a.nav-button {
     display: block;
     text-decoration: none;
     width: 115px;
@@ -42,6 +42,6 @@ a#button {
     font-weight: bold;
 }
 
-a#button:hover {
+a.nav-button:hover {
   background: #1e90ff
 }

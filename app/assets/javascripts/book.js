@@ -1,16 +1,20 @@
 $(function() {
-  $("a.all_comments").on("click", function(e){
+  $("a.all_comments").on("click", function(e) {
     $.ajax({
      method: "GET",
      url: `${this.href}.json`
     }).done(function(response){
-      $("div.comments").html(response.map(resp => {
+      const result = response.filter(resp => resp.body.length > 4)
+
+      $("div.comments").html(result.map(resp => {
         return `<p><strong> ${resp.user.username} </strong>: ${resp.body} </p>`
       }))
      })
     e.preventDefault();
   })
 });
+
+// const result = words.filter(word => word.length > 6);
 
 $(function() {
   $("a.show_genre").on("click", function(e){
