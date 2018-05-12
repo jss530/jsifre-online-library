@@ -1,22 +1,21 @@
 .welcome #intro {
   font-weight: bold;
-  font-family: "Helvetica Neue", Helvetica;
   color: #000000;
   text-align: center;
   font-size: 50px;
 }
 
 .enter a {
-  font-family: "Helvetica Neue", Helvetica;
   background-color: black;
   box-shadow: 0 5px 0 black;
   color: white;
   padding: 1em 1.5em;
-  position: relative;
   text-decoration: none;
   letter-spacing: 2px;
   text-align: center;
-  margin: 0 auto;
+  display: block;
+  width: 20%;
+  margin-left: 40%;
 }
 
 .enter a:hover {

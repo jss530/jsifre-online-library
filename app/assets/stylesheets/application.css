@@ -15,6 +15,10 @@
  *= require slick
  */
 
+body {
+  font-family: "Helvetica Neue", Helvetica;
+}
+
 #carousel-text {
     width: 1170px;
     padding: 30px 100px 30px 100px;
@@ -26,22 +30,31 @@
 
 .signed-in-confirm {
   color: #FFFFFF;
-  font-style: italic;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
 }
 
 a.nav-button {
-    display: block;
-    text-decoration: none;
-    width: 115px;
-    height: 25px;
-    background: #4E9CAF;
-    padding: 10px;
-    text-align: center;
-    border-radius: 5px;
-    color: white;
-    font-weight: bold;
+  background-color: black;
+  box-shadow: 0 5px 0 black;
+  color: white;
+  padding: 1em 1.5em;
+  text-decoration: none;
+  letter-spacing: 2px;
+  display: block;
 }
 
 a.nav-button:hover {
-  background: #1e90ff
+  background-color: #161616;
+  cursor: pointer;
+}
+
+a.nav-button:active {
+  box-shadow: none;
+  top: 5px;
 }
