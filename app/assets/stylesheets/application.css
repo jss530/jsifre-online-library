@@ -20,15 +20,6 @@ body {
   background-color: white;
 }
 
-#carousel-text {
-    width: 1170px;
-    padding: 30px 100px 30px 100px;
-    border: 100px;
-    font-size: 18px;
-    color: #000000;
-    bottom: 0px;
-}
-
 .signed-in-confirm {
   color: #000000;
   padding: 1em;

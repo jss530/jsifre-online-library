@@ -4,6 +4,19 @@
 
 body.genres {
   background-image: image-url('browse-library.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+#genre-page {
+  text-align: center;
+}
+
+.show-genre a {
+  padding: 25px 60px 25px 120px;
+  border-radius: 10px;
+  background: black;
+  color: white;
 }
 
 #genre-list {
@@ -13,4 +26,14 @@ body.genres {
 
 #genre-list:hover {
     color: #ffff00;
+}
+
+
+#carousel-text {
+    width: 1170px;
+    padding: 30px 100px 30px 100px;
+    border: 100px;
+    font-size: 18px;
+    color: #000000;
+    bottom: 0px;
 }
