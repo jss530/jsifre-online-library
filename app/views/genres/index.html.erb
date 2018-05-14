@@ -1,12 +1,12 @@
 <body class="genres">
   <div id="genre-page">
-    <h1>You have entered the library!</h1>
+    <h1 id="genre-intro">You're in.</h1>
 
-    <h2>Browse by genre:</h2>
+    <h2 id="genre-intro-2">Browse by genre:</h2>
 
       <div class="show_books">
           <% @genres.each do |genre| %>
-              <p><%= link_to genre.name, genre_path(genre.id), class: "show_genre", id: "genre-list" %></p>
+              <p class="show-genre"><%= link_to genre.name, genre_path(genre.id), class: "show-genre", id: "genre-list" %></p>
           <% end %>
       </div>
   </div>
