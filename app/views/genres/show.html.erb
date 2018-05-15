@@ -2,11 +2,13 @@
 
   <h1 id="genre-show-intro">Here's what we have in <%=@genre.name%>:</h1>
 
-  <ol>
+  <ul class="book-list">
   <% @genre.books.each do |book| %>
-      <li><%= book.title%> by <%= book.author %></li>
-           <%= link_to 'See more', book_path(book) %><br>
-           <br>
+      <div class="book-info">
+        <li><%= book.title%> by <%= book.author %></li>
+             <%= link_to 'See more', book_path(book), class: "book-link" %><br>
+             <br>
+      </div>
       <% end %>
-  </ol>
+  </ul>
 </body>

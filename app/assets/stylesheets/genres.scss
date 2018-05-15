@@ -46,12 +46,43 @@ body.genres {
 }
 
 .genre-show-page {
-  background-color: #c1c1bb;
+  background: none;
+  background-color: #d3d3cd;
+  border: 10px solid white;
+  padding: 10px;
 }
 
 #genre-show-intro {
   text-align: center;
 }
+
+.book-list {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+.book-info {
+  text-align: center;
+}
+
+.book-link {
+  display: block;
+  background: black;
+  outline: 1px solid transparent;
+  transform-style: preserve-3d;
+  border: none;
+  padding: 10px;
+  display: inline-block;
+  margin: 15px 30px;
+  letter-spacing: 1px;
+  position: relative;
+  transition: all 0.3s;
+  text-decoration: none;
+  color: white;
+  font-size: 12px;
+}
+
 
 // .carousel-text {
 //     width: 1170px;
