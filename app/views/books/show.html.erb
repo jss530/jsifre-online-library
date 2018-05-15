@@ -1,56 +1,56 @@
 <body class="book-show-page">
   <div class="book">
 
-  <h2> <%= @book.title %></h2>
-  <h3>Author: <%= @book.author %></h3>
-  <h4>Year: <%= @book.year %></h4>
-  <%= link_to image_tag(@book.image.url(:thumb)), @book.image.url %>
-  <p><strong>Description:</strong> <%= @book.description %></p>
+    <h2> <%= @book.title %></h2>
+    <h3>Author: <%= @book.author %></h3>
+    <h4>Year: <%= @book.year %></h4>
+    <!-- <%= link_to image_tag(@book.image.url(:thumb)), @book.image.url %> -->
+    <p><strong>Description:</strong> <%= @book.description %></p>
 
-  <p><strong>Availability:</strong></p>
-     <% if @book.available? %>
-         <p>This book is available.</p>
-         <p><strong>Cost: <%=@book.cost%> credit</strong></p>
-            <% if @book.user.credits >= @book.cost %>
-            <p><%= button_to 'Borrow this book', borrow_path %></p>
-            <% else %>
-               <p><strong>Sorry, you don't have enough credits to rent this book. Return a book to get more credits!</strong></p>
+    <p><strong>Availability:</strong></p>
+       <% if @book.available? %>
+           <p>This book is available.</p>
+           <p><strong>Cost: <%=@book.cost%> credit</strong></p>
+              <% if @book.user.credits >= @book.cost %>
+              <p><%= button_to 'Borrow this book', borrow_path %></p>
+              <% else %>
+                 <p><strong>Sorry, you don't have enough credits to rent this book. Return a book to get more credits!</strong></p>
+              <% end %>
+       <% else %>
+           <p>Sorry, this book is rented.</p>
+       <% end %>
+
+    <h2>Comments</h2>
+       <% if @book.comments != [] %>
+
+
+             <% @book.newest_comment.each do |comment| %>
+             <h3> See what other readers have to say about this book: </h3>
+             <div class="new">
+             </div>
+               <% if comment.user_id == current_user.id %>
+               <%= link_to 'Delete Comment', book_comment_path(@book, comment), method: :delete %><br>
+               <% end %>
             <% end %>
-     <% else %>
-         <p>Sorry, this book is rented.</p>
-     <% end %>
-
-  <h2>Comments</h2>
-     <% if @book.comments != [] %>
 
 
-           <% @book.newest_comment.each do |comment| %>
-           <h3> See what other readers have to say about this book: </h3>
-           <div class="new">
-           </div>
-             <% if comment.user_id == current_user.id %>
-             <%= link_to 'Delete Comment', book_comment_path(@book, comment), method: :delete %><br>
-             <% end %>
-          <% end %>
+         <br>
+         <%= link_to "Click here to load all of #{@book.title}'s comments", book_comments_path(@book), class: "all_comments" %>
+         <div class="comments">
+
+         </div>
+
+       <% else %>
+          <p>There are no comments yet. Add yours below!</p>
+       <% end %>
 
 
-       <br>
-       <%= link_to "Click here to load all of #{@book.title}'s comments", book_comments_path(@book), class: "all_comments" %>
-       <div class="comments">
+    <h2>Add a comment:</h2>
 
-       </div>
-
-     <% else %>
-        <p>There are no comments yet. Add yours below!</p>
-     <% end %>
-
-
-  <h2>Add a comment:</h2>
-
-  <%= form_for([@book, @comment]) do |f| %>
-     <%= f.text_area :body %>
-     <p><%= f.submit %></p>
-  <% end %>
+    <%= form_for([@book, @comment]) do |f| %>
+       <%= f.text_area :body %>
+       <p><%= f.submit %></p>
+    <% end %>
 
   </div>
 </body>

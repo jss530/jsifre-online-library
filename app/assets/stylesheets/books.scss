@@ -2,9 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body .book-show-page {
-  background-color: #c1c1bb;
+.book-show-page {
+  background-image: image-url('open-book.jpg');
 
+}
+
+.book {
+  margin-left: 200px;
+  width: 30%;
 }
 
 #book-form {
