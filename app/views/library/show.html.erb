@@ -1,56 +1,58 @@
-<div class="library">
+<body class="my-library-page">
+  <div class="library">
 
-<h1><%= current_user.username%>'s Library</h1>
+  <h1><%= current_user.username%>'s Library</h1>
 
-<h3>You have <%= current_user.credits%> credit(s) available.</h3>
+  <h3>You have <%= current_user.credits%> credit(s) available.</h3>
 
-<h3>Books I've Rented</h3>
-    <% if @rented_books != [] %>
-        <ol>
-        <% @rented_books.each do |book| %>
-            <li><%=link_to book.title, book_path(book.id)%> by <%=book.author%></li>
-            <%= link_to 'Return book', return_path(book.id)%>
-            <br>
-            <br>
-        <%end%>
-        </ol>
-    <% else %>
-        <p>Your list is currently empty.</p>
-    <% end %>
+  <h3>Books I've Rented</h3>
+      <% if @rented_books != [] %>
+          <ol>
+          <% @rented_books.each do |book| %>
+              <li><%=link_to book.title, book_path(book.id)%> by <%=book.author%></li>
+              <%= link_to 'Return book', return_path(book.id)%>
+              <br>
+              <br>
+          <%end%>
+          </ol>
+      <% else %>
+          <p>Your list is currently empty.</p>
+      <% end %>
 
-<h3>Books I Own </h3>
-    <p><%=link_to 'Click here to add a book to your Books I Own list', new_book_path%></p>
+  <h3>Books I Own </h3>
+      <p><%=link_to 'Click here to add a book to your Books I Own list', new_book_path%></p>
 
-    <% if @owned_books != [] %>
-        <ol>
-        <% @owned_books.each do |book| %>
-            <li><%=link_to book.title, book_path(book.id)%> by <%=book.author%></li>
-                <% if book.rented == true %>
-                <p>This book is rented.</p>
-                <% else %>
-                <p>This book is available to rent.</p>
-                <% end %>
-            <%= link_to 'Delete book', book_path(book), :id => "library-button", method: :delete %><br>
-            <%= link_to 'Edit book', edit_book_path(book), :id => "library-button" %>
-                <% if book.rented == true && book.user_id == current_user.id %>
-                <p><%= link_to 'Return book', return_path(book.id), :id => "library-button"%></p>
-                <% end %>
-                <br>
-                <br>
-        <%end%>
-        </ol>
-    <% else %>
-        <p>Your list is currently empty.</p>
-    <% end %>
-    <br>
+      <% if @owned_books != [] %>
+          <ol>
+          <% @owned_books.each do |book| %>
+              <li><%=link_to book.title, book_path(book.id)%> by <%=book.author%></li>
+                  <% if book.rented == true %>
+                  <p>This book is rented.</p>
+                  <% else %>
+                  <p>This book is available to rent.</p>
+                  <% end %>
+              <%= link_to 'Delete book', book_path(book), :id => "library-button", method: :delete %><br>
+              <%= link_to 'Edit book', edit_book_path(book), :id => "library-button" %>
+                  <% if book.rented == true && book.user_id == current_user.id %>
+                  <p><%= link_to 'Return book', return_path(book.id), :id => "library-button"%></p>
+                  <% end %>
+                  <br>
+                  <br>
+          <%end%>
+          </ol>
+      <% else %>
+          <p>Your list is currently empty.</p>
+      <% end %>
+      <br>
 
-<h3>My Comments </h3>
+  <h3>My Comments </h3>
 
-    <ol>
-    <% @my_library.user.comments.each do |comment| %>
-        <li><%=link_to comment.book.title, book_path(comment.book.id)%></li>
-            <p><%=comment.body%></p>
-        <br>
-        <% end %>
-    </ol>
-</div>
+      <ol>
+      <% @my_library.user.comments.each do |comment| %>
+          <li><%=link_to comment.book.title, book_path(comment.book.id)%></li>
+              <p><%=comment.body%></p>
+          <br>
+          <% end %>
+      </ol>
+  </div>
+</body>
