@@ -2,9 +2,15 @@
   "name": "commandsapp",
   "private": true,
   "dependencies": {
-    "handlebars": "^4.0.11"
+    "handlebars": "^4.0.11",
+    "browserify": "~> 10.2.4",
+    "browserify-incremental": "^3.0.1",
+    "babelify": "^7.2.0"
   },
   "engines": {
-  "yarn": ">= 0.25.2"
-}
+    "yarn": ">= 0.25.2"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1"
+  }
 }
