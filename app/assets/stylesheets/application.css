@@ -60,7 +60,11 @@ a.nav-button:active {
   font-size: 45px;
 }
 
-.sign-in-form {
+#signup-form-welcome {
+  font-size: 25px;
+}
+
+.form {
   background-color: #000000;
   border: none;
   color: #fff;
