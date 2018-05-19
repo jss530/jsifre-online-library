@@ -7,8 +7,12 @@ body {
   font-family: "Helvetica Neue", Helvetica;
 }
 
-.library {
-  width: 50%
+.library-show-page {
+  background: none;
+  background-color: #d3d3cd;
+  border: 10px solid white;
+  padding: 10px;
+  text-align: center;
 }
 
 a#library-button {
@@ -26,4 +30,33 @@ a#library-button {
 
 a#library-button:hover {
   background: #0000cd;
+}
+
+.library-buttons {
+  background: black;
+  color: white;
+  outline: 1px solid transparent;
+  transform-style: preserve-3d;
+  border: none;
+  text-decoration: none;
+  padding: 20px 20px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  position: relative;
+  transition: all 0.3s;
+}
+
+
+a .library-buttons {
+  background: black;
+  color: white;
+  outline: 1px solid transparent;
+  transform-style: preserve-3d;
+  border: none;
+  text-decoration: none;
+  padding: 20px 20px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  position: relative;
+  transition: all 0.3s;
 }

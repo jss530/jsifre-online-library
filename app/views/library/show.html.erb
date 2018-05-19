@@ -1,4 +1,4 @@
-<div class="library">
+<body class="library-show-page">
 
 <h1><%= current_user.username%>'s Library</h1>
 
@@ -19,8 +19,9 @@
     <% end %>
 
 <h3>Books I Own </h3>
-    <p><%=link_to 'Click here to add a book to your Books I Own list', new_book_path%></p>
-
+    <br/>
+    <p><%=link_to 'Click here to add a book to your Books I Own list', new_book_path, class: "library-buttons" %></p>
+    <br/>
     <% if @owned_books != [] %>
         <ol>
         <% @owned_books.each do |book| %>
@@ -30,10 +31,10 @@
                 <% else %>
                 <p>This book is available to rent.</p>
                 <% end %>
-            <%= link_to 'Delete book', book_path(book), :id => "library-button", method: :delete %><br>
-            <%= link_to 'Edit book', edit_book_path(book), :id => "library-button" %>
+            <%= link_to 'Delete book', book_path(book), :id => "library-button", method: :delete, class: "library-buttons" %><br>
+            <%= link_to 'Edit book', edit_book_path(book), :id => "library-button", class: "library-buttons" %>
                 <% if book.rented == true && book.user_id == current_user.id %>
-                <p><%= link_to 'Return book', return_path(book.id), :id => "library-button"%></p>
+                <p><%= link_to 'Return book', return_path(book.id), :id => "library-button", class: "library-buttons"%></p>
                 <% end %>
                 <br>
                 <br>
@@ -53,4 +54,4 @@
         <br>
         <% end %>
     </ol>
-</div>
+</body>
