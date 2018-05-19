@@ -3,5 +3,11 @@
   "private": true,
   "dependencies": {
     "handlebars": "^4.0.11"
+  },
+  "engines": {
+    "yarn": ">= 0.25.2"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1"
   }
 }
