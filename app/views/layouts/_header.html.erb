@@ -5,10 +5,13 @@
           <ul class="nav-bar">
             <li><%= link_to "My library", library_path(current_user.id), :class => "nav-button" %></li>
             <li><%= link_to "Sign out", destroy_user_session_path, :class => "nav-button", method: :delete %></li>
-        <% else %>
-            <li><%= link_to "Log into your account", new_user_session_path, :class => "nav-button"  %></li>
-            <li><%= link_to "Become a member", new_user_registration_path, :class => "nav-button"  %></li>
-        <% end %>
             <li><%= link_to "Browse library", root_path, :class => "nav-button"  %></li>
           </ul>
+        <% else %>
+          <ul>
+            <li><%= link_to "Log into your account", new_user_session_path, :class => "nav-button"  %></li>
+            <li><%= link_to "Become a member", new_user_registration_path, :class => "nav-button"  %></li>
+          </ul>
+        <% end %>
+
 </nav>
