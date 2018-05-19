@@ -55,3 +55,22 @@ a.nav-button:active {
   box-shadow: none;
   top: 5px;
 }
+
+#login-form-welcome {
+  font-size: 45px;
+}
+
+.sign-in-form {
+  background-color: #000000;
+  border: none;
+  color: #fff;
+  font-size: 1em;
+  padding: 10px 50px;
+  text-transform: uppercase;
+  font-weight: normal;
+  width: 20%;
+}
+
+.actions {
+  font-size: 45px;
+}
