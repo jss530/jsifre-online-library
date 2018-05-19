@@ -6,14 +6,16 @@
 
 <h3>Books I've Rented</h3>
     <% if @rented_books != [] %>
-        <ol>
+      <div class="rented-list">
+        <ul>
         <% @rented_books.each do |book| %>
             <li><%=link_to book.title, book_path(book.id)%> by <%=book.author%></li>
             <%= link_to 'Return book', return_path(book.id)%>
             <br>
             <br>
         <%end%>
-        </ol>
+        </ul>
+    </div>
     <% else %>
         <p>Your list is currently empty.</p>
     <% end %>
